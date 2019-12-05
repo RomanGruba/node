@@ -12,11 +12,10 @@ const server = http.createServer(function(req, res) {
   if (req.method === "GET") {
     res.setHeader("Content-Type", "text/html");
     res.write(
-      '<form method="GET"><input type="text" name="name"><input type="text" name="dog"><button type="submit">Send</button></form>'
+      '<form method="POST"><input type="text" name="name"><input type="text" name="dog"><button type="submit">Send</button></form>'
     );
     res.end();
-  }
-  if (req.method === "POST") {
+  } else {
     const myURL = url.parse(req.url);
     const query = qs.parse(myURL.query);
     console.log(query);
