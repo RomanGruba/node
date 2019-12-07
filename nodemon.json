@@ -1,5 +1,5 @@
 {
   "verbose": false,
-  "delay": 3000,
+
   "ext": "js, json,ejs"
 }

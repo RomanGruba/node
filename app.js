@@ -12,8 +12,8 @@ app.use("/images", express.static("static/images"));
 
 app.get("/:latitude/:longitude", (req, res) => {
   const { latitude, longitude } = req.params;
-  darkskyAPI(latitude, longitude);
-  res.render("index", { title: "Weather APP" });
+  const getWeather = darkskyAPI(latitude, longitude);
+  res.render("index", { title: "Weather APP", summary: getWeather.summary });
 });
 
 // app.get("/weather", (req, res) => {
